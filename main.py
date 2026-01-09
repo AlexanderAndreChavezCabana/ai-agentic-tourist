@@ -17,12 +17,12 @@ from src.utils.config import ConfigLoader
 class ChatbotTouristico:
     """Aplicación principal del chatbot turístico"""
     
-    def __init__(self, llm_provider: str = "openai"):
+    def __init__(self, llm_provider: str = "google"):
         """
         Inicializar el chatbot.
         
         Args:
-            llm_provider: Proveedor de LLM a usar
+            llm_provider: Proveedor de LLM a usar (google)
         """
         Logger.info("Inicializando Chatbot Turístico Huaraz...")
         

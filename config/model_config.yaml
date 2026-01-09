@@ -1,28 +1,14 @@
 # Configuración de Modelos LLM
 models:
-  openai:
-    provider: "openai"
-    model_name: "gpt-4-turbo"
+  google:
+    provider: "google"
+    model_name: "gemini-pro"
     temperature: 0.7
     max_tokens: 2048
     top_p: 0.9
-    frequency_penalty: 0
-    presence_penalty: 0.6
-
-  claude:
-    provider: "anthropic"
-    model_name: "claude-3-opus-20240229"
-    temperature: 0.7
-    max_tokens: 2048
-
-  groq:
-    provider: "groq"
-    model_name: "mixtral-8x7b-32768"
-    temperature: 0.7
-    max_tokens: 2048
 
 # Modelo por defecto
-default_model: "openai"
+default_model: "google"
 
 # Timeout para llamadas a API
 api_timeout: 30

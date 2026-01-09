@@ -95,9 +95,7 @@ class EnvironmentConfig:
     def get_api_key(provider: str) -> str:
         """Obtener API key de un proveedor"""
         key_mapping = {
-            "openai": "OPENAI_API_KEY",
-            "anthropic": "ANTHROPIC_API_KEY",
-            "groq": "GROQ_API_KEY"
+            "google": "GOOGLE_API_KEY"
         }
         
         env_var = key_mapping.get(provider.lower())

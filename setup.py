@@ -25,9 +25,7 @@ setup(
     python_requires=">=3.9",
     install_requires=[
         "langchain>=0.1.0",
-        "langchain-openai>=0.0.1",
-        "langchain-anthropic>=0.1.0",
-        "langchain-groq>=0.0.1",
+        "langchain-google-genai>=0.0.1",
         "python-dotenv>=1.0.0",
         "pyyaml>=6.0",
         "pydantic>=2.0.0",
