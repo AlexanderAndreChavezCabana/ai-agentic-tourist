@@ -16,7 +16,7 @@ def main():
     print("EJEMPLO 3: CONSULTAS ESPECIALIZADAS".center(60))
     print("="*60)
     
-    chatbot = ChatbotTouristico(llm_provider="openai")
+    chatbot = ChatbotTouristico(llm_provider="google")
     
     # Diferentes tipos de consultas
     queries = {

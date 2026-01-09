@@ -17,7 +17,7 @@ def main():
     print("EJEMPLO 2: ITINERARIO PERSONALIZADO".center(60))
     print("="*60)
     
-    chatbot = ChatbotTouristico(llm_provider="openai")
+    chatbot = ChatbotTouristico(llm_provider="google")
     
     # Configurar preferencias del usuario
     print("\nConfigurando preferencias del usuario...")
