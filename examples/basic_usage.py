@@ -18,7 +18,7 @@ def main():
     print("="*60)
     
     # Crear instancia del chatbot
-    chatbot = ChatbotTouristico(llm_provider="google")
+    chatbot = ChatbotTouristico(llm_provider="openai")
     
     # Ejemplos de consultas
     queries = [

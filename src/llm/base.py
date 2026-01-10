@@ -1,11 +1,11 @@
 """
-Módulo de clientes LLM - Integración con Google AI
+Módulo de clientes LLM - Integración con OpenAI
 """
 import os
 from typing import Optional, Dict, Any
 from abc import ABC, abstractmethod
 
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_openai import ChatOpenAI
 
 
 class LLMClient(ABC):
@@ -17,12 +17,12 @@ class LLMClient(ABC):
         pass
 
 
-class GoogleAIClient(LLMClient):
-    """Cliente para Google AI (Gemini)"""
+class OpenAIClient(LLMClient):
+    """Cliente para OpenAI (GPT-4)"""
     
     def __init__(
         self,
-        model_name: str = "gemini-pro",
+        model_name: str = "gpt-4o",
         temperature: float = 0.7,
         max_tokens: int = 2048,
         api_key: Optional[str] = None
@@ -30,14 +30,14 @@ class GoogleAIClient(LLMClient):
         self.model_name = model_name
         self.temperature = temperature
         self.max_tokens = max_tokens
-        self.api_key = api_key or os.getenv("GOOGLE_API_KEY")
+        self.api_key = api_key or os.getenv("OPENAI_API_KEY")
     
     def get_model(self) -> Any:
-        return ChatGoogleGenerativeAI(
+        return ChatOpenAI(
             model=self.model_name,
             temperature=self.temperature,
-            max_output_tokens=self.max_tokens,
-            google_api_key=self.api_key
+            max_tokens=self.max_tokens,
+            openai_api_key=self.api_key
         )
 
 
@@ -45,7 +45,7 @@ class LLMFactory:
     """Factory para crear clientes LLM"""
     
     _clients: Dict[str, LLMClient] = {
-        "google": GoogleAIClient,
+        "openai": OpenAIClient,
     }
     
     @classmethod

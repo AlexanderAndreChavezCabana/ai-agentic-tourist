@@ -6,7 +6,7 @@ import subprocess
 from pathlib import Path
 
 print("="*60)
-print("INSTALADOR - CHATBOT TURÍSTICO GOOGLE AI")
+print("INSTALADOR - CHATBOT TURÍSTICO OPENAI")
 print("="*60 + "\n")
 
 project_root = Path(__file__).parent
@@ -33,7 +33,7 @@ if not env_file.exists():
         with open(env_file, 'w') as f:
             f.write(content)
         print("   ✓ Archivo .env creado desde .env.example")
-        print("   ⚠️  IMPORTANTE: Edita .env y añade tu GOOGLE_API_KEY\n")
+        print("   ⚠️  IMPORTANTE: Edita .env y añade tu OPENAI_API_KEY\n")
     else:
         print("   ✗ No se encontró .env.example\n")
         sys.exit(1)
@@ -56,9 +56,9 @@ print("✅ INSTALACIÓN COMPLETADA")
 print("="*60 + "\n")
 
 print("PRÓXIMOS PASOS:\n")
-print("1. Edita el archivo .env y añade tu Google API Key:")
-print("   GOOGLE_API_KEY=tu_api_key_aqui\n")
-print("2. Obtén tu API Key en: https://aistudio.google.com/app/apikey\n")
+print("1. Edita el archivo .env y añade tu OpenAI API Key:")
+print("   OPENAI_API_KEY=tu_api_key_aqui\n")
+print("2. Obtén tu API Key en: https://platform.openai.com/api-keys\n")
 print("3. Prueba el chatbot:")
 print("   python main.py\n")
 print("4. O prueba con ejemplos:")

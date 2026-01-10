@@ -2,8 +2,8 @@
 
 ## Estado: COMPLETAMENTE FUNCIONAL
 
-**Fecha:** 8 de Enero de 2026  
-**Proveedor:** Google AI (Gemini 2.5 Flash)  
+**Fecha:** 10 de Enero de 2026  
+**Proveedor:** OpenAI (GPT-4o)  
 **Estado:** ✅ Producción
 
 ---

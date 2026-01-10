@@ -20,10 +20,8 @@ Un asistente turístico inteligente especializado en Huaraz, Perú, construido c
 - 💬 **Conversación Natural**: Respuestas en español, contextuales y personalizadas
 
 ### Integraciones LLM
-- OpenAI (GPT-4 Turbo)
-- Anthropic (Claude)
-- Groq (Mixtral)
-- Fácilmente extensible a otros proveedores
+- OpenAI (GPT-4o, GPT-4 Turbo, GPT-3.5)
+- Arquitectura extensible para otros proveedores
 
 ## 📁 Estructura del Proyecto
 
@@ -90,11 +88,9 @@ pip install -r requirements.txt
 ```bash
 # Crear archivo .env en la raíz del proyecto
 echo "OPENAI_API_KEY=tu_api_key_aqui" > .env
-# O
-echo "ANTHROPIC_API_KEY=tu_api_key_aqui" >> .env
-# O
-echo "GROQ_API_KEY=tu_api_key_aqui" >> .env
 ```
+
+Ver [SETUP_OPENAI.md](SETUP_OPENAI.md) para instrucciones detalladas.
 
 ## 💬 Uso
 
