@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Turístico Huaraz | Tu Guía Virtual de la Cordillera Blanca</title>
+    <meta name="description" content="Asistente virtual inteligente para planificar tu viaje a Huaraz, Perú. Información sobre atracciones, trekking, laguna 69, Pastoruri y más.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-mountain"></i>
+                    <span class="logo-text">Huaraz<span class="logo-ai">AI</span></span>
+                </div>
+                <nav class="nav">
+                    <a href="#inicio" class="nav-link active">Inicio</a>
+                    <a href="#atracciones" class="nav-link">Atracciones</a>
+                    <a href="#chat" class="nav-link">Chat</a>
+                    <a href="#stats" class="nav-link">Estadísticas</a>
+                </nav>
+                <button class="theme-toggle" id="themeToggle" title="Cambiar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-sparkles"></i>
+                    <span>Inteligencia Artificial Avanzada</span>
+                </div>
+                <h1 class="hero-title">
+                    Descubre <span class="gradient-text">Huaraz</span>
+                    <br>con Inteligencia Artificial
+                </h1>
+                <p class="hero-subtitle">
+                    Tu asistente virtual experto en turismo para la Cordillera Blanca.
+                    <br>Planifica tu aventura perfecta con ayuda de IA.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#chat" class="btn btn-primary">
+                        <i class="fas fa-comments"></i>
+                        Comenzar Chat
+                    </a>
+                    <a href="#atracciones" class="btn btn-secondary">
+                        <i class="fas fa-map-marked-alt"></i>
+                        Ver Atracciones
+                    </a>
+                </div>
+                
+                <!-- Stats Preview -->
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-mountain"></i>
+                        <div class="stat-info">
+                            <h3 id="attractionsCount">15+</h3>
+                            <p>Atracciones</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-message"></i>
+                        <div class="stat-info">
+                            <h3 id="messagesCount">1000+</h3>
+                            <p>Consultas</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <div class="stat-info">
+                            <h3 id="usersCount">500+</h3>
+                            <p>Usuarios</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">¿Qué puedo hacer por ti?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-location-dot"></i>
+                    </div>
+                    <h3>Recomendaciones</h3>
+                    <p>Te recomiendo las mejores atracciones según tus preferencias, nivel de condición física y presupuesto.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-days"></i>
+                    </div>
+                    <h3>Itinerarios</h3>
+                    <p>Creo itinerarios personalizados día por día para que aproveches al máximo tu visita a Huaraz.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cloud-sun"></i>
+                    </div>
+                    <h3>Clima & Temporada</h3>
+                    <p>Te informo sobre el mejor momento para visitar cada atracción según el clima y la temporada.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h3>Alojamiento</h3>
+                    <p>Sugerencias de hospedaje según tu presupuesto: económico, medio o alto.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Mal de Altura</h3>
+                    <p>Consejos sobre aclimatación y prevención del mal de altura en zonas de gran altitud.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hiking"></i>
+                    </div>
+                    <h3>Actividades</h3>
+                    <p>Información sobre trekking, escalada, tours culturales y actividades de aventura.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Attractions Section -->
+    <section class="attractions" id="atracciones">
+        <div class="container">
+            <h2 class="section-title">Atracciones Populares</h2>
+            <p class="section-subtitle">Descubre los lugares más impresionantes de Huaraz</p>
+            
+            <div class="attractions-filter">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-globe"></i> Todas
+                </button>
+                <button class="filter-btn" data-filter="bajo">
+                    <i class="fas fa-walking"></i> Fácil
+                </button>
+                <button class="filter-btn" data-filter="medio">
+                    <i class="fas fa-hiking"></i> Moderado
+                </button>
+                <button class="filter-btn" data-filter="alto">
+                    <i class="fas fa-mountain"></i> Difícil
+                </button>
+            </div>
+            
+            <div id="attractionsGrid" class="attractions-grid">
+                <!-- Las atracciones se cargarán dinámicamente con JavaScript -->
+                <div class="loading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Cargando atracciones...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Section -->
+    <section class="chat-section" id="chat">
+        <div class="container">
+            <h2 class="section-title">Chat con tu Asistente Virtual</h2>
+            <p class="section-subtitle">Pregúntame lo que quieras sobre Huaraz</p>
+            
+            <div class="chat-container">
+                <!-- Sidebar -->
+                <div class="chat-sidebar">
+                    <div class="chat-sidebar-header">
+                        <h3>Conversaciones</h3>
+                        <button id="newChatBtn" class="btn-icon" title="Nueva conversación">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="chat-sessions">
+                        <div class="session-item active" data-session="default">
+                            <i class="fas fa-message"></i>
+                            <span>Conversación actual</span>
+                        </div>
+                    </div>
+                    <div class="quick-actions">
+                        <h4>Preguntas Rápidas</h4>
+                        <button class="quick-btn" data-message="¿Cuáles son las mejores atracciones de Huaraz?">
+                            <i class="fas fa-star"></i> Mejores atracciones
+                        </button>
+                        <button class="quick-btn" data-message="¿Cuándo es la mejor época para visitar?">
+                            <i class="fas fa-calendar"></i> Mejor época
+                        </button>
+                        <button class="quick-btn" data-message="Crea un itinerario de 3 días">
+                            <i class="fas fa-route"></i> Itinerario 3 días
+                        </button>
+                        <button class="quick-btn" data-message="¿Cómo prevenir el mal de altura?">
+                            <i class="fas fa-heartbeat"></i> Mal de altura
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Chat Main -->
+                <div class="chat-main">
+                    <div class="chat-header">
+                        <div class="chat-header-info">
+                            <div class="avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div>
+                                <h3>Huaraz AI Assistant</h3>
+                                <p class="status">
+                                    <span class="status-dot"></span>
+                                    <span id="connectionStatus">En línea</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="chat-header-actions">
+                            <button class="btn-icon" id="clearChatBtn" title="Limpiar chat">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                            <button class="btn-icon" id="exportChatBtn" title="Exportar chat">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-messages" id="chatMessages">
+                        <!-- Welcome Message -->
+                        <div class="message bot-message">
+                            <div class="message-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="message-content">
+                                <div class="message-bubble">
+                                    <p>¡Hola! 👋 Soy tu asistente virtual de turismo en Huaraz. </p>
+                                    <p>Puedo ayudarte con:</p>
+                                    <ul>
+                                        <li>🏔️ Recomendaciones de atracciones</li>
+                                        <li>📅 Creación de itinerarios</li>
+                                        <li>🏨 Sugerencias de alojamiento</li>
+                                        <li>🌤️ Información sobre clima</li>
+                                        <li>⛰️ Consejos sobre altitud</li>
+                                    </ul>
+                                    <p>¿En qué puedo ayudarte hoy?</p>
+                                </div>
+                                <div class="message-time">Ahora</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-input-container">
+                        <div class="typing-indicator" id="typingIndicator">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <form class="chat-input-form" id="chatForm">
+                            <button type="button" class="btn-icon" id="attachBtn" title="Adjuntar archivo">
+                                <i class="fas fa-paperclip"></i>
+                            </button>
+                            <input 
+                                type="text" 
+                                id="messageInput" 
+                                class="chat-input" 
+                                placeholder="Escribe tu pregunta sobre Huaraz..."
+                                autocomplete="off"
+                            >
+                            <button type="submit" class="btn-send" id="sendBtn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                        <div class="input-info">
+                            <i class="fas fa-shield-halved"></i>
+                            Tus conversaciones son privadas y seguras
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section" id="stats">
+        <div class="container">
+            <h2 class="section-title">Estadísticas en Tiempo Real</h2>
+            <div class="stats-grid">
+                <div class="stats-card">
+                    <div class="stats-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="stats-content">
+                        <h3 id="totalConversations">0</h3>
+                        <p>Conversaciones Totales</p>
+                        <span class="stats-change positive">
+                            <i class="fas fa-arrow-up"></i> +12%
+                        </span>
+                    </div>
+                </div>
+                <div class="stats-card">
+                    <div class="stats-icon">
+                        <i class="fas fa-message"></i>
+                    </div>
+                    <div class="stats-content">
+                        <h3 id="totalMessages">0</h3>
+                        <p>Mensajes Procesados</p>
+                        <span class="stats-change positive">
+                            <i class="fas fa-arrow-up"></i> +8%
+                        </span>
+                    </div>
+                </div>
+                <div class="stats-card">
+                    <div class="stats-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <div class="stats-content">
+                        <h3 id="activeConnections">0</h3>
+                        <p>Conexiones Activas</p>
+                        <span class="stats-change">
+                            <i class="fas fa-circle"></i> En línea
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>
+                        <i class="fas fa-mountain"></i>
+                        HuarazAI
+                    </h3>
+                    <p>Tu asistente virtual inteligente para explorar la majestuosa Cordillera Blanca.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#atracciones">Atracciones</a></li>
+                        <li><a href="#chat">Chat</a></li>
+                        <li><a href="/docs">API Docs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Información</h4>
+                    <ul>
+                        <li><a href="#">Sobre Huaraz</a></li>
+                        <li><a href="#">Términos de Uso</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Tecnología</h4>
+                    <p><i class="fas fa-brain"></i> Asistente IA Avanzado</p>
+                    <p><i class="fas fa-code"></i> FastAPI + LangChain</p>
+                    <p><i class="fas fa-server"></i> WebSocket Real-time</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 HuarazAI. Desarrollado con <i class="fas fa-heart"></i> para los amantes de la montaña.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

@@ -157,8 +157,21 @@ class ChatbotTouristico:
         Returns:
             Respuesta del agente
         """
-        response = self.agent.process_query(user_input)
-        return response["response"] if response["success"] else response.get("response", "Error")
+        try:
+            Logger.info(f"🔍 Procesando query: {user_input[:100]}...")
+            response = self.agent.process_query(user_input)
+            
+            if response["success"]:
+                Logger.info("✅ Query procesada exitosamente")
+                return response["response"]
+            else:
+                Logger.warning(f"⚠️ Query procesada con advertencia: {response.get('response', 'Error')}")
+                return response.get("response", "Lo siento, no pude procesar tu consulta.")
+        except Exception as e:
+            Logger.error(f"❌ Error en process_query: {str(e)}")
+            import traceback
+            Logger.error(traceback.format_exc())
+            return f"Lo siento, ocurrió un error al procesar tu consulta: {str(e)}"
 
 
 def main():
