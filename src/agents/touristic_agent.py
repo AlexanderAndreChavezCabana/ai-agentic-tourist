@@ -1,9 +1,11 @@
 """
-Agente Turístico con capacidades AgentIC
+Agente Turístico con capacidades AgentIC y RAG
 """
 from typing import Optional, List, Dict, Any
 from langgraph.prebuilt import create_react_agent
 from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.messages import HumanMessage, AIMessage, trim_messages
+from langchain_core.chat_history import BaseChatMessageHistory, InMemoryChatMessageHistory
 from src.handlers.tools import (
     search_attractions,
     get_attraction_details,
@@ -13,37 +15,52 @@ from src.handlers.tools import (
     get_altitude_advice,
     create_daily_itinerary
 )
+from src.handlers.rag_tools import (
+    search_web_tourism_info,
+    get_tour_price,
+    list_all_tours_with_prices
+)
 from src.prompt_engineering.prompts import PromptManager
 
 
 class TouristicAgent:
     """Agente turístico con capacidades agénticas"""
     
-    def __init__(self, llm: Any, max_iterations: int = 10):
+    def __init__(self, llm: Any, max_iterations: int = 10, memory_k: int = 10):
         """
         Inicializar el agente turístico.
         
         Args:
             llm: Modelo de lenguaje a utilizar
             max_iterations: Máximo número de iteraciones del agente
+            memory_k: Número de mensajes a mantener en memoria (default: 10)
         """
         self.llm = llm
         self.max_iterations = max_iterations
+        self.memory_k = memory_k
         self.tools = self._setup_tools()
         self.conversation_history: List[Dict[str, str]] = []
         self.user_context: Dict[str, Any] = {}
+        # Sistema de memoria conversacional
+        self.chat_history = InMemoryChatMessageHistory()
         self.agent_executor = self._create_agent_executor()
     
     def _setup_tools(self) -> List:
         """Configurar las herramientas disponibles para el agente"""
         return [
+            # Herramientas locales
             search_attractions,
             get_attraction_details,
             get_activity_recommendations,
             search_accommodations,
             get_best_season,
             get_altitude_advice,
-            create_daily_itinerary
+            create_daily_itinerary,
+            # Herramientas RAG para búsqueda web
+            search_web_tourism_info,
+            # Herramientas de scraping de precios (más precisas)
+            get_tour_price,
+            list_all_tours_with_prices
         ]
     
     def _create_agent_executor(self) -> Any:
@@ -68,12 +85,27 @@ class TouristicAgent:
             Respuesta del agente
         """
         try:
-            # Invocar el agente con formato correcto para LangGraph
-            # create_react_agent espera: {"messages": [HumanMessage(content=...)]}
-            from langchain_core.messages import HumanMessage
+            # Agregar mensaje del usuario al historial
+            self.chat_history.add_user_message(user_input)
             
+            # Obtener mensajes del historial y limitar a los últimos K mensajes
+            all_messages = self.chat_history.messages
+            
+            # Usar trim_messages para mantener solo los últimos K mensajes
+            # Esto mantiene el contexto reciente sin sobrecargar el modelo
+            trimmed_messages = trim_messages(
+                all_messages,
+                max_tokens=self.memory_k * 200,  # Aproximadamente K mensajes
+                strategy="last",
+                token_counter=len
+            )
+            
+            # Agregar el mensaje actual
+            messages_to_send = list(trimmed_messages) + [HumanMessage(content=user_input)]
+            
+            # Invocar el agente con el historial
             response = self.agent_executor.invoke({
-                "messages": [HumanMessage(content=user_input)]
+                "messages": messages_to_send
             })
             
             # Extraer la respuesta del último mensaje
@@ -98,11 +130,18 @@ class TouristicAgent:
             else:
                 output_text = str(response)
             
-            # Guardar en historial de conversación
+            # Guardar respuesta del asistente en memoria
+            self.chat_history.add_ai_message(output_text)
+            
+            # Guardar en historial de conversación (mantener últimos 10)
             self.conversation_history.append({
                 "user": user_input,
                 "assistant": output_text
             })
+            
+            # Limitar historial a últimos 10 intercambios
+            if len(self.conversation_history) > self.memory_k:
+                self.conversation_history = self.conversation_history[-self.memory_k:]
             
             return {
                 "success": True,
@@ -118,15 +157,29 @@ class TouristicAgent:
             }
     
     def get_conversation_history(self) -> str:
-        """Obtener historial de conversación"""
+        """Obtener historial de conversación formateado"""
         history_text = ""
         for exchange in self.conversation_history:
             history_text += f"Usuario: {exchange['user']}\nAsistente: {exchange['assistant']}\n\n"
         return history_text
     
+    def get_memory_summary(self) -> Dict[str, Any]:
+        """Obtener resumen del estado de la memoria"""
+        return {
+            "total_messages": len(self.chat_history.messages),
+            "conversation_exchanges": len(self.conversation_history),
+            "memory_limit": self.memory_k,
+            "messages_in_history": [
+                {"role": msg.type, "preview": str(msg.content)[:100]} 
+                for msg in self.chat_history.messages[-5:]  # Últimos 5 mensajes
+            ]
+        }
+    
     def clear_memory(self) -> None:
-        """Limpiar la memoria de conversación"""
+        """Limpiar completamente la memoria de conversación"""
         self.conversation_history = []
+        self.chat_history.clear()
+        self.user_context = {}
     
     def set_user_context(self, context: Dict[str, Any]) -> None:
         """

@@ -359,6 +359,10 @@ function formatMessageContent(content) {
     // Italic text *text*
     content = content.replace(/\*(.*?)\*/g, '<em>$1</em>');
     
+    // Convertir enlaces HTML (mantener tags <a> intactos)
+    // Esto preserva los enlaces tour-link que vienen del backend
+    // No hacemos nada aquí porque el contenido ya viene con HTML
+    
     // Lists (simple detection)
     if (content.includes('- ') || content.includes('• ')) {
         const lines = content.split('<br>');
@@ -377,12 +381,22 @@ function formatMessageContent(content) {
                     result.push('</ul>');
                     inList = false;
                 }
-                result.push(`<p>${line}</p>`);
+                // No envolver en <p> si ya tiene tags HTML
+                if (line.includes('<a') || line.includes('<strong>') || line.includes('<em>')) {
+                    result.push(line);
+                } else {
+                    result.push(`<p>${line}</p>`);
+                }
             }
         }
         
         if (inList) result.push('</ul>');
         return result.join('');
+    }
+    
+    // Si ya tiene HTML tags, no envolver en <p>
+    if (content.includes('<a') || content.includes('<strong>') || content.includes('<em>')) {
+        return content;
     }
     
     // Wrap in paragraph

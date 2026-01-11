@@ -883,6 +883,48 @@ body {
     margin: var(--space-xs) 0;
 }
 
+/* Tour Links - Enlaces clickeables bonitos */
+.message-bubble a.tour-link {
+    display: inline-block;
+    margin: 12px 0;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white !important;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    font-size: 0.95rem;
+}
+
+.message-bubble a.tour-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.message-bubble a.tour-link:active {
+    transform: translateY(0);
+}
+
+/* Enlaces normales en mensajes bot */
+.bot-message .message-bubble a:not(.tour-link) {
+    color: #667eea;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.bot-message .message-bubble a:not(.tour-link):hover {
+    color: #764ba2;
+}
+
+/* Enlaces en mensajes de usuario */
+.user-message .message-bubble a {
+    color: white;
+    text-decoration: underline;
+}
+
 .message-time {
     font-size: 0.75rem;
     color: var(--text-light);
