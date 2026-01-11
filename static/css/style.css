@@ -230,7 +230,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 100%);
+    background: linear-gradient(135deg, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.7) 100%);
     z-index: 1;
 }
 
