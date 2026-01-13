@@ -1,0 +1,12 @@
+# Ignorar dependencias, datos y archivos grandes para despliegue en Vercel
+venv/
+__pycache__/
+data/rag_cache/faiss_index/
+data/rag_cache/tours_data.json
+notebooks/
+.env
+*.md
+*.pyc
+*.ipynb
+.DS_Store
+# Puedes agregar más carpetas o archivos grandes si los tienes
