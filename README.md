@@ -140,17 +140,24 @@ DEBUG=false
 LOG_LEVEL=INFO
 ```
 
-#### 5. Ejecutar scraper inicial (recomendado)
+#### 5. Ejecutar scraping y preparar datos para RAG
+
+Para obtener y actualizar toda la información de tours y precios, ejecuta:
 ```bash
 python scripts/scrape_prices.py
 ```
-Esto descargará y cacheará información de 26+ tours desde huarazturismo.com
+Esto descargará y cacheará información de 26+ tours desde huarazturismo.com en el archivo `data/rag_cache/tours_data.json`.
 
-#### 6. Inicializar sistema RAG (opcional)
+Luego, para inicializar el sistema RAG y crear el índice vectorial FAISS, ejecuta:
 ```bash
 python quickstart_rag.py
 ```
-Esto creará el índice vectorial FAISS para búsquedas semánticas
+Esto procesará los datos extraídos y generará el índice necesario para búsquedas semánticas y respuestas contextuales.
+
+**Resumen del flujo:**
+1. Ejecuta `scrape_prices.py` para extraer y actualizar los datos de tours.
+2. Ejecuta `quickstart_rag.py` para inicializar el sistema RAG y el índice FAISS.
+3. Inicia el servidor y disfruta de respuestas precisas y actualizadas.
 
 ---
 
