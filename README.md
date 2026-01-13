@@ -1,3 +1,10 @@
+# 🏔️ Chatbot Turístico Huaraz AI
+
+**Autor:** Alexander Chavez Cabana  
+**Diplomado:** AI Engineer  
+**Docente:** Angelo Castillo
+
+
 
 # 🏔️ Chatbot Turístico Huaraz AI
 
@@ -771,13 +778,12 @@ in the Software without restriction...
 ---
 
 ## 👥 Autores y Reconocimientos
-
 ### Autor Principal
-**Angelo Castillo**
-- 🎓 Estudiante de Diseño e Implementación de Chatbots
-- 📧 Email: angelo.castillo@example.com
-- 🔗 GitHub: [@angelocastillo](https://github.com/angelocastillo)
-- 💼 LinkedIn: [Angelo Castillo](https://linkedin.com/in/angelocastillo)
+**Alexander Chavez Cabana**
+- 🎓 Diplomado AI Engineer
+- 📧 Email: alexanderchavezcabana@gmail.com
+- 🔗 GitHub: [@AlexanderAndreChavezCabana](https://github.com/AlexanderAndreChavezCabana)
+- 💼 LinkedIn: [Alexander Chavez Cabana](https://linkedin.com/in/alexanderchavezcabana)
 
 ### Agradecimientos Especiales
 
@@ -796,22 +802,6 @@ in the Software without restriction...
 
 ---
 
-## 📞 Soporte y Contacto
-
-### ¿Necesitas ayuda?
-
-- 🐛 **Reportar bugs**: [GitHub Issues](https://github.com/tuusuario/chatbot_turismo_huaraz/issues)
-- 💬 **Discusiones**: [GitHub Discussions](https://github.com/tuusuario/chatbot_turismo_huaraz/discussions)
-- 📧 **Email**: soporte@huarazai.com
-- 💼 **LinkedIn**: [Perfil del proyecto](https://linkedin.com/company/huaraz-ai)
-
-### Recursos de Soporte
-
-- 📖 **Wiki**: [GitHub Wiki](https://github.com/tuusuario/chatbot_turismo_huaraz/wiki)
-- 🎥 **Videos**: [YouTube Channel](https://youtube.com/@huarazai)
-- 📱 **Telegram**: [Comunidad Huaraz AI](https://t.me/huarazai)
-
----
 
 ## 🎯 Casos de Uso
 
