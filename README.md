@@ -1,4 +1,36 @@
+
 # 🏔️ Chatbot Turístico Huaraz AI
+
+## 🖼️ Vista Rápida del Proyecto
+
+<p align="center">
+  <img src="data/images/huarazai.png" alt="Logo HuarazAI" width="180" />
+  <img src="data/images/huaraz-ai-chat.png" alt="Interfaz principal del chat" width="420" />
+</p>
+
+**HuarazAI** es un asistente virtual inteligente para turismo en la Cordillera Blanca, con IA generativa y RAG. La interfaz web permite consultas sobre tours, clima, itinerarios y recomendaciones personalizadas.
+
+---
+---
+
+## 📸 Galería de Funcionalidades
+
+<p align="center">
+  <img src="data/images/huaraz-ai-chat-clima.png" alt="Consulta de clima en Huaraz" width="320" />
+  <br><em>Consulta de clima en tiempo real</em>
+  <img src="data/images/huaraz-ai-chat-trekking.png" alt="Recomendaciones de trekking" width="320" />
+  <br><em>Recomendaciones de trekking y rutas</em>
+  <img src="data/images/huaraz-ai-chat-caminata-laguna-69.png" alt="Consulta sobre Laguna 69" width="320" />
+  <br><em>Información y precios de Laguna 69</em>
+  <img src="data/images/huaraz-ai-chat-chavin-huantar.png" alt="Consulta sobre Chavín de Huantar" width="320" />
+  <br><em>Detalles de tours a Chavín de Huantar</em>
+  <img src="data/images/huaraz-ai-chat-trekking-consulta.png" alt="Consulta avanzada de trekking" width="320" />
+  <br><em>Consulta avanzada de trekking</em>
+  <img src="data/images/turismohz.png" alt="Vista de turismo Huaraz" width="320" />
+  <br><em>Vista general de turismo en Huaraz</em>
+  <img src="data/images/turismohz-1.png" alt="Vista alternativa de turismo" width="320" />
+  <br><em>Vista alternativa de turismo</em>
+</p>
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green.svg)](https://fastapi.tiangolo.com/)
