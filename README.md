@@ -1,7 +1,8 @@
 # 🏔️ Chatbot Turístico Huaraz AI
 
 **Autor:** Alexander Chavez Cabana  
-**Diplomado:** AI Engineer
+**Diplomado:** AI Engineer  
+**Docente:** 
 
 
 
@@ -789,7 +790,7 @@ Este proyecto está bajo la **Licencia MIT**. Ver archivo [LICENSE](LICENSE) par
 ```
 MIT License
 
-Copyright (c) 2026
+Copyright (c) 2026 Angelo Castillo
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -887,6 +888,7 @@ in the Software without restriction...
 
 _Última actualización: Enero 10, 2026_
 _Versión: 1.0.0_
+_Mantenido por: Angelo Castillo_
 #   a i - a g e n t i c - t o u r i s t 
  
  
