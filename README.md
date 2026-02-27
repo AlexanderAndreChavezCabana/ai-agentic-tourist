@@ -1,7 +1,12 @@
 # 🏔️ Chatbot Turístico Huaraz AI
 
 **Autor:** Alexander Chavez Cabana  
-**Diplomado:** AI Engineer
+**Diplomado:** AI Engineer  
+**Docente:** Ernesto Laura
+
+
+
+# 🏔️ Chatbot Turístico Huaraz AI
 
 ## 🖼️ Vista Rápida del Proyecto
 
@@ -785,7 +790,7 @@ Este proyecto está bajo la **Licencia MIT**. Ver archivo [LICENSE](LICENSE) par
 ```
 MIT License
 
-Copyright (c) 2026 Alexander Chavez Cabana
+Copyright (c) 2026 Ernesto Laura
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -855,50 +860,6 @@ in the Software without restriction...
 
 ---
 
-## 🚀 Deployment Options
-
-### ⚡ Deploy en 3 minutos - Google Cloud Run (RECOMENDADO)
-
-```bash
-# Método automático súper rápido
-python deploy_cloudrun.py
-
-# Tu chatbot estará vivo globalmente en minutos
-# URL: https://tu-servicio.a.run.app
-```
-
-**✅ Perfecto para:** Demos, portfolios, prototipos, producción ligera  
-**💰 Costo:** $0 para testing, ~$2-5/mes para uso real  
-**🔄 Scaling:** Automático de 0 a 1000+ usuarios  
-
-### 🏢 Deploy Enterprise - Azure App Service
-
-```bash
-# Para uso corporativo/enterprise
-# Ver guía completa: AZURE_DEPLOYMENT.md
-az webapp up -n tu-chatbot
-```
-
-**✅ Perfecto para:** Empresas, integración Microsoft, features avanzados  
-**💰 Costo:** ~$13+/mes (siempre activo)  
-**🔄 Scaling:** Manual/configuración avanzada  
-
-### 🖥️ Desarrollo Local
-
-```bash
-# Para testing local
-cp .env.example .env  # Configurar API keys
-python startup.py     # Disponible en localhost:8080
-```
-
-### 📚 Guías Completas
-
-- 🚀 **[Google Cloud Run](GOOGLE_CLOUDRUN_DEPLOYMENT.md)** - Deploy más rápido
-- 🏢 **[Azure App Service](AZURE_DEPLOYMENT.md)** - Deploy enterprise  
-- 📊 **[Comparación Methods](DEPLOYMENT_METHODS.md)** - ¿Cuál elegir?
-
----
-
 ## 🏆 Características Destacadas
 
 ### 🥇 Por qué es especial
@@ -921,13 +882,8 @@ python startup.py     # Disponible en localhost:8080
 
 **⭐ Si este proyecto te fue útil, considera darle una estrella en GitHub!**
 
-**🏔️ Hecho con ❤️ en Huaraz, Perú 🇵🇪**
+**🏔️ Hecho en Huaraz, Perú 🇵🇪**
 
 ---
 
 _Última actualización: Enero 10, 2026_
-_Versión: 1.0.0_
-_Mantenido por: Alexander Chavez Cabana_
-#   a i - a g e n t i c - t o u r i s t 
- 
- 
