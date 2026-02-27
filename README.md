@@ -56,12 +56,24 @@
   </tr>
 </table>
 
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green.svg)](https://fastapi.tiangolo.com/)
-[![LangChain](https://img.shields.io/badge/LangChain-0.1+-yellow.svg)](https://python.langchain.com/)
+## 🚀 Tecnologías
+
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/) 
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green.svg)](https://fastapi.tiangolo.com/) 
+[![LangChain](https://img.shields.io/badge/LangChain-0.1+-yellow.svg)](https://python.langchain.com/) 
 [![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4-orange.svg)](https://openai.com/)
 
-Asistente virtual inteligente especializado en turismo en Huaraz, Perú. Utiliza tecnologías de IA avanzadas incluyendo RAG (Retrieval-Augmented Generation), web scraping en tiempo real, memoria conversacional y agentes inteligentes para brindar información actualizada sobre tours, clima, y recomendaciones personalizadas.
+## 📝 Descripción
+
+**Asistente virtual inteligente especializado en turismo en Huaraz, Perú.**
+
+Utiliza tecnologías de IA avanzadas incluyendo:
+- **RAG** (Retrieval-Augmented Generation) 
+- **Web scraping** en tiempo real
+- **Memoria conversacional** 
+- **Agentes inteligentes** 
+
+Para brindar información actualizada sobre tours, clima, y recomendaciones personalizadas.
 
 ---
 
