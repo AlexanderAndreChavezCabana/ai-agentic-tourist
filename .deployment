@@ -1,0 +1,21 @@
+{
+  "httpLoggingEnabled": false,
+  "scmType": "GitHub", 
+  "use32BitWorkerProcess": false,
+  "webSocketsEnabled": false,
+  "alwaysOn": false,
+  "managedPipelineMode": "Integrated",
+  "virtualApplications": [
+    {
+      "virtualPath": "/",
+      "physicalPath": "site\\wwwroot",
+      "preloadEnabled": false
+    }
+  ],
+  "winHttpSettings": {
+    "maxConcurrentRequests": 200
+  },
+  "experiments": {
+    "rampUpRules": []
+  }
+}
