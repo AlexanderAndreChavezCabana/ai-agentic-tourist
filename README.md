@@ -56,24 +56,12 @@
   </tr>
 </table>
 
-## 🚀 Tecnologías
-
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/) 
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green.svg)](https://fastapi.tiangolo.com/) 
-[![LangChain](https://img.shields.io/badge/LangChain-0.1+-yellow.svg)](https://python.langchain.com/) 
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green.svg)](https://fastapi.tiangolo.com/)
+[![LangChain](https://img.shields.io/badge/LangChain-0.1+-yellow.svg)](https://python.langchain.com/)
 [![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4-orange.svg)](https://openai.com/)
 
-## 📝 Descripción
-
-**Asistente virtual inteligente especializado en turismo en Huaraz, Perú.**
-
-Utiliza tecnologías de IA avanzadas incluyendo:
-- **RAG** (Retrieval-Augmented Generation) 
-- **Web scraping** en tiempo real
-- **Memoria conversacional** 
-- **Agentes inteligentes** 
-
-Para brindar información actualizada sobre tours, clima, y recomendaciones personalizadas.
+Asistente virtual inteligente especializado en turismo en Huaraz, Perú. Utiliza tecnologías de IA avanzadas incluyendo RAG (Retrieval-Augmented Generation), web scraping en tiempo real, memoria conversacional y agentes inteligentes para brindar información actualizada sobre tours, clima, y recomendaciones personalizadas.
 
 ---
 
@@ -864,6 +852,50 @@ in the Software without restriction...
 - **Tests implementados**: 8
 - **Dependencias**: 30+
 - **Tiempo de respuesta promedio**: <2s
+
+---
+
+## 🚀 Deployment Options
+
+### ⚡ Deploy en 3 minutos - Google Cloud Run (RECOMENDADO)
+
+```bash
+# Método automático súper rápido
+python deploy_cloudrun.py
+
+# Tu chatbot estará vivo globalmente en minutos
+# URL: https://tu-servicio.a.run.app
+```
+
+**✅ Perfecto para:** Demos, portfolios, prototipos, producción ligera  
+**💰 Costo:** $0 para testing, ~$2-5/mes para uso real  
+**🔄 Scaling:** Automático de 0 a 1000+ usuarios  
+
+### 🏢 Deploy Enterprise - Azure App Service
+
+```bash
+# Para uso corporativo/enterprise
+# Ver guía completa: AZURE_DEPLOYMENT.md
+az webapp up -n tu-chatbot
+```
+
+**✅ Perfecto para:** Empresas, integración Microsoft, features avanzados  
+**💰 Costo:** ~$13+/mes (siempre activo)  
+**🔄 Scaling:** Manual/configuración avanzada  
+
+### 🖥️ Desarrollo Local
+
+```bash
+# Para testing local
+cp .env.example .env  # Configurar API keys
+python startup.py     # Disponible en localhost:8080
+```
+
+### 📚 Guías Completas
+
+- 🚀 **[Google Cloud Run](GOOGLE_CLOUDRUN_DEPLOYMENT.md)** - Deploy más rápido
+- 🏢 **[Azure App Service](AZURE_DEPLOYMENT.md)** - Deploy enterprise  
+- 📊 **[Comparación Methods](DEPLOYMENT_METHODS.md)** - ¿Cuál elegir?
 
 ---
 
